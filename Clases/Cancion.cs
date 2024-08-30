@@ -12,13 +12,15 @@ namespace Clases
         public string Nombre;
         public string Genero;
         public string artista;
+        public string ruta;
 
-        public Cancion(int codigo, string nombre, string genero, string artista)
+        public Cancion(int codigo, string nombre, string genero, string artista, string ruta)
         {
             Codigo = codigo;
             Nombre = nombre;
             Genero = genero;
             this.artista = artista;
+            this.ruta = ruta;
         }
     }
 }

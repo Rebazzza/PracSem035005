@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace Clases
 {
     public class ListaCircular
     {
+        SoundPlayer player;
         public Nodo primero = null;
         public Nodo ultimo = null;
         public void Insertar(Cancion nuevacancion)
@@ -36,6 +38,7 @@ namespace Clases
             do
             {
                 Console.WriteLine(temp.dato);
+                
                 temp = temp.sig;
 
             } while (temp != primero);
@@ -50,8 +53,9 @@ namespace Clases
                 Console.WriteLine("----------LISTA-CANCIONES----------");
                 Console.WriteLine("Codigo: "+ temp.dato.Codigo);
                 Console.WriteLine("Nombre: " + temp.dato.Nombre);
-                Console.WriteLine("Género: " + temp.dato.Genero);
                 Console.WriteLine("Artista: " + temp.dato.artista);
+                player = new SoundPlayer(temp.dato.ruta);
+                player.Play();
                 Console.WriteLine("-----------------------------------");
                 Console.WriteLine("[1]Siguiente");
                 Console.WriteLine("[0]Salir ");
