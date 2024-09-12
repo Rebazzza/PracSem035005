@@ -8,19 +8,18 @@ namespace Clases
 {
     public  class Cancion
     {
-        public int Codigo;
-        public string Nombre;
-        public string Genero;
-        public string artista;
-        public string ruta;
+    
+        public int codigo {  get; set; }
+        public string nombre { get; set; }
+        public string genero { get; set; }
+        public string artista { get; set; }
+        public string ruta { get; set; }
+        public string img { get; set; }
 
-        public Cancion(int codigo, string nombre, string genero, string artista, string ruta)
+
+        public override string ToString()
         {
-            Codigo = codigo;
-            Nombre = nombre;
-            Genero = genero;
-            this.artista = artista;
-            this.ruta = ruta;
+            return "Nombre: " + nombre + " /Genero: " + genero + " /Año: " + artista + " /Artista: " + ruta;
         }
     }
 }

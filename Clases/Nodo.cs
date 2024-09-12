@@ -9,6 +9,7 @@ namespace Clases
     public class Nodo
     {
         public Nodo sig = null;
+        public Nodo ant = null;
         public Cancion dato;
     }
 }

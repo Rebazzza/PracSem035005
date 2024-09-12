@@ -22,13 +22,17 @@ namespace Clases
                 primero.sig = primero;
                 ultimo = nuevo;
                 
+
             }
             else
             {
+                
+                nuevo.ant = ultimo;
                 ultimo.sig = nuevo;
                 nuevo.sig = primero;
                 ultimo = nuevo;
-                
+                primero.ant = ultimo;
+
             }
 
         }
@@ -51,8 +55,8 @@ namespace Clases
             {
                 Console.Clear();
                 Console.WriteLine("----------LISTA-CANCIONES----------");
-                Console.WriteLine("Codigo: "+ temp.dato.Codigo);
-                Console.WriteLine("Nombre: " + temp.dato.Nombre);
+                Console.WriteLine("Codigo: "+ temp.dato.codigo);
+                Console.WriteLine("Nombre: " + temp.dato.nombre);
                 Console.WriteLine("Artista: " + temp.dato.artista);
                 player = new SoundPlayer(temp.dato.ruta);
                 player.Play();
@@ -81,14 +85,14 @@ namespace Clases
             bool val = false; 
             do
             {
-                if(primero.dato.Codigo == el )
+                if(primero.dato.codigo == el )
                 {
                     ultimo.sig = primero.sig;
                     primero = primero.sig;
                     Console.WriteLine("Canción eliminada");
                     val= true;
                 }
-                else if (temp.dato.Codigo == el) 
+                else if (temp.dato.codigo == el) 
                 {
                     anterior.sig = temp.sig;
                     Console.WriteLine("Canción eliminada");
